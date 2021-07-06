@@ -22,7 +22,7 @@ requirements:
     - pip
     - python
   run:
-    - acme >=1.8.0
+    - acme >={{ version }}
     - configargparse >=0.9.3
     - configobj >=5.0.6
     - cryptography >=2.1.4
