@@ -33,7 +33,7 @@ requirements:
     - python
     - pytz
     - pywin32 >=300  # [win]
-    - setuptools >=39.0.1
+    - setuptools >=41.6.0
     - zope.component
     - zope.interface
 
