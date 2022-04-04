@@ -11,7 +11,7 @@ source:
   sha256: 9633d21051fe7fd076d64cb41963de61d300d7c30f4b491c8d18cb8306357509
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py2k]
   entry_points:
     - certbot = certbot.main:main
