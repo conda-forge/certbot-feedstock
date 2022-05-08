@@ -1,5 +1,5 @@
 {% set name = "certbot" %}
-{% set version = "1.26.0" %}
+{% set version = "1.27.0" %}
 
 
 package:
@@ -8,11 +8,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/certbot-{{ version }}.tar.gz
-  sha256: 9d136fab6968829db9774a264a96a7923a5482d0c90894b009253f374d480693
+  sha256: 94106fce72ad92fa58b68d18a84c641d3222b24859b75d92c93bd172cd6eb8ac
 
 build:
   number: 0
-  skip: true  # [py2k]
+  skip: true  # [py<37]
   entry_points:
     - certbot = certbot.main:main
   script: {{ PYTHON }} -m pip install . -vv
@@ -31,7 +31,7 @@ requirements:
     - parsedatetime >=2.4
     - pyrfc3339
     - python
-    - pytz
+    - pytz >=2019.3
     - pywin32 >=300  # [win]
     - setuptools >=41.6.0
     - zope.component
