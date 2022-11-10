@@ -1,5 +1,5 @@
 {% set name = "certbot" %}
-{% set version = "1.31.0" %}
+{% set version = "1.32.0" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/certbot-{{ version }}.tar.gz
-  sha256: 29af531d33aaa87c8104864cd31ac2af541f0ec973a7252d7f7f5b15e10479db
+  sha256: 1a86aed518a25af87a5ab43ed4b07375c9ac4db4e756c25d53af44f25dbdd2dd
 
 build:
-  number: 1
+  number: 0
   skip: true  # [py<37]
   entry_points:
     - certbot = certbot.main:main
