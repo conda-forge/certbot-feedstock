@@ -11,7 +11,7 @@ source:
   sha256: 1a86aed518a25af87a5ab43ed4b07375c9ac4db4e756c25d53af44f25dbdd2dd
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<37]
   entry_points:
     - certbot = certbot.main:main
