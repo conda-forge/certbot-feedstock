@@ -1,7 +1,6 @@
 {% set name = "certbot" %}
 {% set version = "2.1.0" %}
 
-
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -11,17 +10,18 @@ source:
   sha256: 1f4409739f8454956963b4c78fc1c959db2bef85ea6fc6f08951d7275ec2595d
 
 build:
-  number: 0
-  skip: true  # [py<37]
+  noarch: python
   entry_points:
     - certbot = certbot.main:main
   script: {{ PYTHON }} -m pip install . -vv
+  number: 1
 
 requirements:
   host:
+    - python >=3.7
     - pip
-    - python
   run:
+    - python >=3.7
     - acme >={{ version }}
     - configargparse >=0.9.3
     - configobj >=5.0.6
@@ -30,12 +30,13 @@ requirements:
     - josepy >=1.13.0
     - parsedatetime >=2.4
     - pyrfc3339
-    - python
     - pytz >=2019.3
-    - pywin32 >=300  # [win]
+    - pywin32-on-windows
     - setuptools >=41.6.0
     - zope.component
     - zope.interface
+  run_constrained:
+    - pywin32 >=300
 
 test:
   imports:
