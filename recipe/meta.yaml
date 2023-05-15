@@ -1,5 +1,5 @@
 {% set name = "certbot" %}
-{% set version = "2.5.0" %}
+{% set version = "2.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/certbot-{{ version }}.tar.gz
-  sha256: 76e6e5305021d3ee54c42fc471f8f0ed5dba790e6fd7fef6713060b0e42b97d7
+  sha256: c4de6bb0d092729650ed90a5bdb513932bdc47ec5f7f98049180ab8e4a835dab
 
 build:
   noarch: python
@@ -25,7 +25,7 @@ requirements:
     - acme >={{ version }}
     - configargparse >=0.9.3
     - configobj >=5.0.6
-    - cryptography >=2.5.0
+    - cryptography >=3.2.1
     - distro >=1.0.1
     - josepy >=1.13.0
     - parsedatetime >=2.4
