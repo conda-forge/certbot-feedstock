@@ -23,7 +23,7 @@ requirements:
   run:
     - python >=3.7
     - acme >={{ version }}
-    - configargparse >=0.9.3
+    - configargparse >=1.5.3
     - configobj >=5.0.6
     - cryptography >=3.2.1
     - distro >=1.0.1
