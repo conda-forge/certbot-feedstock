@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/certbot-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/certbot-{{ version }}.tar.gz
   sha256: 4d573635840bbcc1124a2176e7188e69f6e3210f9ed94e20839547f07caee2b2
 
 build:
@@ -18,16 +18,17 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - acme >={{ version }}
     - configargparse >=1.5.3
     - configobj >=5.0.6
     - cryptography >=3.2.1
     - distro >=1.0.1
-    - josepy >=1.13.0
+    - josepy >=1.13.0,<2
     - parsedatetime >=2.4
     - pyrfc3339
     - pytz >=2019.3
@@ -45,6 +46,7 @@ test:
     - certbot --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/letsencrypt/letsencrypt
