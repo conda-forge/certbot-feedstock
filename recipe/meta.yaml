@@ -33,6 +33,7 @@ requirements:
     - pytz >=2019.3
     - pywin32-on-windows
     - setuptools >=41.6.0
+    - importlib-metadata >=4.6
   run_constrained:
     - pywin32 >=300
 
