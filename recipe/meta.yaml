@@ -28,7 +28,7 @@ requirements:
     - configobj >=5.0.6
     - cryptography >=3.2.1
     - distro >=1.0.1
-    - josepy >=1.13.0
+    - josepy >=1.13.0,<2
     - parsedatetime >=2.4
     - pyrfc3339
     - pytz >=2019.3
