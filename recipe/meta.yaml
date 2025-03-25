@@ -1,5 +1,5 @@
 {% set name = "certbot" %}
-{% set version = "3.2.0" %}
+{% set version = "3.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/certbot-{{ version }}.tar.gz
-  sha256: 2939a248def1a8bce661f8d92f9add975108741d7d96fcbfff2936031e72930c
+  sha256: 40482fde0dd36b08e811d847df40ed04b6a3da52979c55456384a96807801d07
 
 build:
   noarch: python
@@ -23,7 +23,7 @@ requirements:
     - setuptools
   run:
     - python >={{ python_min }}
-    - acme >={{ version }}
+    - acme >=3.3.0
     - configargparse >=1.5.3
     - configobj >=5.0.6
     - cryptography >=43.0.0
@@ -32,7 +32,7 @@ requirements:
     - parsedatetime >=2.4
     - pyrfc3339
     - pytz >=2019.3
-    - pywin32-on-windows
+    - pywin32-on-windows >=300
     - setuptools >=41.6.0
     - importlib-metadata >=4.6
   run_constrained:
