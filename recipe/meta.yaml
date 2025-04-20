@@ -1,5 +1,5 @@
 {% set name = "certbot" %}
-{% set version = "3.3.0" %}
+{% set version = "4.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/certbot-{{ version }}.tar.gz
-  sha256: 40482fde0dd36b08e811d847df40ed04b6a3da52979c55456384a96807801d07
+  sha256: a867bfbb5126516c12d4c8a93909ef1e4d5309fc4e9f5b97b2d987b0ffd4bbe3
 
 build:
   noarch: python
@@ -28,7 +28,7 @@ requirements:
     - configobj >=5.0.6
     - cryptography >=43.0.0
     - distro >=1.0.1
-    - josepy >=1.13.0,<2
+    - josepy >=2.0.0
     - parsedatetime >=2.4
     - pyrfc3339
     - pytz >=2019.3
