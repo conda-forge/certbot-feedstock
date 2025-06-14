@@ -1,5 +1,5 @@
 {% set name = "certbot" %}
-{% set version = "4.0.0" %}
+{% set version = "4.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/certbot-{{ version }}.tar.gz
-  sha256: a867bfbb5126516c12d4c8a93909ef1e4d5309fc4e9f5b97b2d987b0ffd4bbe3
+  sha256: d1fdde3174bcf1d68f7a8dca070341acec28b78ef92ad2dd18b8d49959e96779
 
 build:
   noarch: python
@@ -34,7 +34,7 @@ requirements:
     - pytz >=2019.3
     - pywin32-on-windows
     - setuptools >=41.6.0
-    - importlib-metadata >=4.6
+    - importlib-metadata >=8.6.1
   run_constrained:
     - pywin32 >=300
 
