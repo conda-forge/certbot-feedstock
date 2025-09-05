@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: certbot
-  version: 4.2.0
+  version: '5.0.0'
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/certbot-${{ version }}.tar.gz
-  sha256: fb1e56ca8a072bec49ac0c7b5390a29cbf68c2c05f712259a9b3491de041c27b
+  sha256: 4e9e4680e812037b582cef7335570074390b455d24a3e09bcaa2fdc473dbcc0a
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
   python:
@@ -33,12 +33,9 @@ requirements:
     - cryptography >=43.0.0
     - distro >=1.0.1
     - josepy >=2.0.0
-    - parsedatetime >=2.4
+    - parsedatetime >=2.6
     - pyrfc3339
-    - pytz >=2019.3
     - pywin32-on-windows
-    - setuptools >=41.6.0
-    - importlib-metadata >=8.6.1
   run_constraints:
     - pywin32 >=300
 
@@ -65,3 +62,4 @@ about:
 extra:
   recipe-maintainers:
     - nehaljwani
+    - pavelzw
