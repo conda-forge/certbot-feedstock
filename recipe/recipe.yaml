@@ -1,0 +1,67 @@
+schema_version: 1
+
+context:
+  name: certbot
+  version: 4.2.0
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/certbot-${{ version }}.tar.gz
+  sha256: fb1e56ca8a072bec49ac0c7b5390a29cbf68c2c05f712259a9b3491de041c27b
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - certbot = certbot.main:main
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - acme >=${{ version }}
+    - configargparse >=1.5.3
+    - configobj >=5.0.6
+    - cryptography >=43.0.0
+    - distro >=1.0.1
+    - josepy >=2.0.0
+    - parsedatetime >=2.4
+    - pyrfc3339
+    - pytz >=2019.3
+    - pywin32-on-windows
+    - setuptools >=41.6.0
+    - importlib-metadata >=8.6.1
+  run_constraints:
+    - pywin32 >=300
+
+tests:
+  - python:
+      imports:
+        - certbot
+        - certbot._internal
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - pip check
+      - certbot --help
+
+about:
+  summary: ACME client
+  license: Apache-2.0
+  license_file: LICENSE.txt
+  homepage: https://github.com/letsencrypt/letsencrypt
+
+extra:
+  recipe-maintainers:
+    - nehaljwani
