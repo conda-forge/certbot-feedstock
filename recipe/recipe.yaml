@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: certbot
-  version: "5.1.0"
+  version: "5.2.1"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/certbot-${{ version }}.tar.gz
-  sha256: d652a598f67af78ecf122860e85cd2e9c19a2bbe79a71775eccf6e8d642a4fca
+  sha256: 5faed67634a3f8a62782655b5f739161804fc9999577b263ea7dd76eba62f406
 
 build:
   number: 0
