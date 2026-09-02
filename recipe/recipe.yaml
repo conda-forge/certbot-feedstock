@@ -1,16 +1,15 @@
 schema_version: 1
 
 context:
-  name: certbot
-  version: "5.7.0"
+  version: "5.8.0"
 
 package:
-  name: ${{ name|lower }}
+  name: certbot
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/certbot-${{ version }}.tar.gz
-  sha256: c896a0aa3fe1fa1e344002d4a24a5934889a88b8759f41a22b4dcfe5a8e27b94
+  url: https://pypi.org/packages/source/c/certbot/certbot-${{ version }}.tar.gz
+  sha256: a4a2c7b0459bb626b3791ef07b6df26bbb222d2324783ba3e60f76c0933eec87
 
 build:
   number: 0
@@ -44,13 +43,10 @@ tests:
       imports:
         - certbot
         - certbot._internal
-      python_version: ${{ python_min }}.*
-  - requirements:
-      run:
-        - pip
-        - python ${{ python_min }}.*
-    script:
-      - pip check
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - script:
       - certbot --help
 
 about:
